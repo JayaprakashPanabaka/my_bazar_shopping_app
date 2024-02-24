@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { useSelector } from "react-redux";
-import { ToastContainer, toast } from "react-toastify";
+import {  ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
 import CartItem from "../components/CartItem";
 
 const Cart = () => {
   const productData = useSelector((state) => state.bazar.productData);
   const [totalAmt, setTotalAmt] = useState("");
+  
   useEffect(() => {
     let price = 0;
     productData.map((item) => {
@@ -72,7 +73,7 @@ const Cart = () => {
           </Link>
         </div>
       )}
-      <ToastContainer
+      {/* <ToastContainer
         position="top-left"
         autoClose={2000}
         hideProgressBar={false}
@@ -83,7 +84,7 @@ const Cart = () => {
         draggable
         pauseOnHover
         theme="dark"
-      />
+      /> */}
     </div>
   );
 };
